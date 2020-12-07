@@ -326,6 +326,13 @@
       <tag name="controller.service_arguments"/>
       <tag name="routing.route_loader"/>
     </service>
+    <service id="App\Controller\ArmesController" class="App\Controller\ArmesController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.5nX7ca3.App\Controller\ArmesController"/>
+      </call>
+    </service>
     <service id="App\Controller\PersonnageController" class="App\Controller\PersonnageController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -5020,6 +5027,9 @@
       </call>
     </service>
     <service id="twig.missing_extension_suggestor" class="Twig\Extra\TwigExtraBundle\MissingExtensionSuggestor"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ArmesController" class="App\Controller\ArmesController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ArmesController" class="App\Controller\ArmesController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ArmesController" class="App\Controller\ArmesController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\PersonnageController" class="App\Controller\PersonnageController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\PersonnageController" class="App\Controller\PersonnageController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\PersonnageController" class="App\Controller\PersonnageController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -5574,6 +5584,12 @@
         <argument key="session" type="service" id="session" on-invalid="ignore"/>
         <argument key="twig" type="service" id="twig" on-invalid="ignore"/>
       </argument>
+    </service>
+    <service id=".service_locator.5nX7ca3.App\Controller\ArmesController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ArmesController"/>
+      <argument>App\Controller\ArmesController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.5nX7ca3" method="withContext"/>
     </service>
     <service id=".service_locator.5nX7ca3.App\Controller\PersonnageController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\PersonnageController"/>

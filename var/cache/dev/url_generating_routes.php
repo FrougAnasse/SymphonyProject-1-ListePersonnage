@@ -15,6 +15,8 @@ return [
     '_profiler_router' => [['token'], ['_controller' => 'web_profiler.controller.router::panelAction'], [], [['text', '/router'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
+    'armes' => [[], ['_controller' => 'App\\Controller\\ArmesController::index'], [], [['text', '/armes']], [], []],
+    'arme' => [['nom'], ['_controller' => 'App\\Controller\\ArmesController::arme'], [], [['variable', '/', '[^/]++', 'nom', true], ['text', '/armes']], [], []],
     'accueil' => [[], ['_controller' => 'App\\Controller\\PersonnageController::index'], [], [['text', '/']], [], []],
     'personnages' => [[], ['_controller' => 'App\\Controller\\PersonnageController::persos'], [], [['text', '/persos']], [], []],
     'afficher_personnage' => [['nom'], ['_controller' => 'App\\Controller\\PersonnageController::afficherPerso'], [], [['variable', '/', '[^/]++', 'nom', true], ['text', '/persos']], [], []],

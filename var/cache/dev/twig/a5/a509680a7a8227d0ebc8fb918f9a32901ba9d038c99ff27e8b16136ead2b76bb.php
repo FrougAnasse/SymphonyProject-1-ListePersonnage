@@ -86,7 +86,7 @@ class __TwigTemplate_907babf1f484ec7976954b5034c163c912f0d7962a7b1b1ec719c8fc072
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "monTitre"));
 
         // line 7
-        echo "    Liste des personnage block
+        echo "    Liste des personnage
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -131,7 +131,7 @@ class __TwigTemplate_907babf1f484ec7976954b5034c163c912f0d7962a7b1b1ec719c8fc072
             echo "\"></td>
             <td><a href=\"";
             // line 27
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("afficher_personnage", ["nom" => twig_get_attribute($this->env, $this->source, $context["player"], "nom", [], "any", false, false, false, 27)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("afficher_personnage", ["nom" => twig_lower_filter($this->env, twig_get_attribute($this->env, $this->source, $context["player"], "nom", [], "any", false, false, false, 27))]), "html", null, true);
             echo "\"> ";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["player"], "nom", [], "any", false, false, false, 27), "html", null, true);
             echo "</a></td>
@@ -206,7 +206,7 @@ class __TwigTemplate_907babf1f484ec7976954b5034c163c912f0d7962a7b1b1ec719c8fc072
 
 
 {% block monTitre %}
-    Liste des personnage block
+    Liste des personnage
 {% endblock %}
 
 
@@ -226,7 +226,7 @@ class __TwigTemplate_907babf1f484ec7976954b5034c163c912f0d7962a7b1b1ec719c8fc072
     {% for player in players %}
         <tr>
             <td><img src=\"{{ asset('images/personnages/' ~ player.nom  ~ '.png') }}\"></td>
-            <td><a href=\"{{ path( 'afficher_personnage',{'nom' : player.nom }) }}\"> {{player.nom}}</a></td>
+            <td><a href=\"{{ path( 'afficher_personnage',{'nom' : player.nom|lower}) }}\"> {{player.nom}}</a></td>
             <td>{{player.age}}</td>
             <td>
                 {% if player.sexe %}

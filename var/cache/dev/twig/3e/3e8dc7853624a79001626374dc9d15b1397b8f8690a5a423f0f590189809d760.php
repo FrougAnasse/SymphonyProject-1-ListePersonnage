@@ -56,6 +56,11 @@ class __TwigTemplate_c71019c029fdacc923f90038a4f67e0af0bf8c5530b88aa649a69a6fb06
         // line 10
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("personnages");
         echo "\">Personnages</a>
+          <li class=\"nav-item active\">
+            <a class=\"nav-link\" href=\"";
+        // line 12
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("armes");
+        echo "\">Armes</a>
         </li>
     </div>
   </nav>";
@@ -79,7 +84,7 @@ class __TwigTemplate_c71019c029fdacc923f90038a4f67e0af0bf8c5530b88aa649a69a6fb06
 
     public function getDebugInfo()
     {
-        return array (  57 => 10,  46 => 2,  43 => 1,);
+        return array (  62 => 12,  57 => 10,  46 => 2,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -94,6 +99,8 @@ class __TwigTemplate_c71019c029fdacc923f90038a4f67e0af0bf8c5530b88aa649a69a6fb06
       <ul class=\"navbar-nav mr-auto\">
         <li class=\"nav-item active\">
           <a class=\"nav-link\" href=\"{{ path(\"personnages\")}}\">Personnages</a>
+          <li class=\"nav-item active\">
+            <a class=\"nav-link\" href=\"{{ path(\"armes\")}}\">Armes</a>
         </li>
     </div>
   </nav>", "./navBar.html.twig", "C:\\Users\\VolgoBox\\Desktop\\formation Symfony\\projetPersonage\\templates\\navBar.html.twig");

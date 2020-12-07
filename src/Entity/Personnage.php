@@ -11,7 +11,7 @@ class Personnage {
 
     public static $personnages=[];
 
-    public function __construct($nom,$sexe,$age,$caractéristique)
+    public function __construct($nom,$age,$sexe,$caractéristique)
     {
         $this->nom=$nom;
         $this->age=$age;

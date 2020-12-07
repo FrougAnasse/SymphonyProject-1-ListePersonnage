@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Personnage;
 
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -27,6 +28,8 @@ class PersonnageController extends AbstractController
                 "players" => Personnage::$personnages
          ]);
      }
+
+
 
       #[Route('/persos/{nom}', name: 'afficher_personnage')]
       public function afficherPerso($nom)
